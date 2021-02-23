@@ -380,8 +380,8 @@ worker:
   ## Add extra volume mounts
   ##
   extraVolumeMounts:
-    - name: git-cloned-dag-files-airflow-dat
-      mountPath: /opt/bitnami/airflow/dags/git-airflow-dat/data
+    - name: git-cloned-dag-files-airflow
+      mountPath: /opt/bitnami/airflow/dags/git-airflow/data
   ## Add extra volumes
   ##
   extraVolumes:
