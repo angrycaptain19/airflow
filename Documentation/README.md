@@ -24,26 +24,26 @@ In `customer_number.csv` there were some events in `storenr` column with value `
 ### Disable DAGS are paused at creation flag
 
 By default, DAGS are paused at creation `dags_are_paused_at_creation=True` in `airflow.cfg`. In order to override it add `extraEnvVars` to `web` component in `values.yml`
-`
+```
   extraEnvVars:
     - name: AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION
       value: "false"
-`
+```
 
 ### Securely store database secrets
 
 Database secrets are stored in k8s secret `database-secrets.yml` and added in `values.yml`. In that way, pods will have the database secrets as environment variables. In `dags/dag.py` the database secrets can be accessed through `os.environ`.
 
-`
+```
   extraEnvVarsSecret: database-secrets
-`
+```
 
 ### Access data in container
 
 In order to access data, add and extra volume mount. In that way, data will be available inside the container at the specified `mountPath`
 
-`
+```
   extraVolumeMounts:
     - name: git-cloned-dag-files-airflow
       mountPath: /opt/bitnami/airflow/dags/git-airflow/data
-`
+```
