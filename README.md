@@ -14,12 +14,13 @@
 `kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services airflow`
 
 Wait till apps are ready
+
 `kubectl wait --for=condition=ready pod -l app.kubernetes.io/instance=airflow --timeout=3600s`
 
-Once all pods are up and running 
-Open `http://172.18.0.3:31759/` in a browser
+Once all pods are up and running, open `http://172.18.0.3:31759/` in a browser
 
 Login with `user` username and for retrieving the password execute the following command:
+
 `kubectl get secret --namespace "default" airflow -o jsonpath="{.data.airflow-password}" | base64 --decode`
 
 
@@ -30,10 +31,13 @@ Trigger `initial_load_dag` DAG.
 
 Get the database password by running:
 
-`kubectl get secret --namespace "default" database-secrets -o jsonpath="{.data.POSTGRESQLPASSWORD}" | base64 --decode``
+`
+kubectl get secret --namespace "default" database-secrets -o jsonpath="{.data.POSTGRESQLPASSWORD}" | base64 --decode`
+`
 
 When pipline is completed check the table content in PostgreSQL:
 
+`
 kubectl exec -it airflow-postgresql-0 bash
 I have no name!@airflow-postgresql-0:/$ psql -U bn_airflow -d bitnami_airflow -c 'select * from stores'
 I have no name!@airflow-postgresql-0:/$ psql -U bn_airflow -d bitnami_airflow -c 'select * from events'
