@@ -37,9 +37,10 @@ kubectl get secret --namespace "default" database-secrets -o jsonpath="{.data.PO
 
 When pipline is completed check the table content in PostgreSQL:
 
-`
-kubectl exec -it airflow-postgresql-0 bash
-I have no name!@airflow-postgresql-0:/$ psql -U bn_airflow -d bitnami_airflow -c 'select * from stores'
-I have no name!@airflow-postgresql-0:/$ psql -U bn_airflow -d bitnami_airflow -c 'select * from events'
-`
+`kubectl exec -it airflow-postgresql-0 bash`
+
+`I have no name!@airflow-postgresql-0:/$ psql -U bn_airflow -d bitnami_airflow -c 'select * from stores'`
+
+`I have no name!@airflow-postgresql-0:/$ psql -U bn_airflow -d bitnami_airflow -c 'select * from events'`
+
 
