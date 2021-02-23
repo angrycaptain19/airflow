@@ -32,11 +32,9 @@ By default, DAGS are paused at creation `dags_are_paused_at_creation=True` in `a
 
 ### Securely store database secrets
 
-Database secrets are stored in k8s secret  `database-secrets.yml` and added in `values.yml`. In that way, pods will have the database secrets as environment variables. In `dags/dag.py` the database secrets can be accessed through `os.environ`.
+Database secrets are stored in k8s secret `database-secrets.yml` and added in `values.yml`. In that way, pods will have the database secrets as environment variables. In `dags/dag.py` the database secrets can be accessed through `os.environ`.
 
 `
-  ## Secret with extra environment variables
-  ##
   extraEnvVarsSecret: database-secrets
 `
 
