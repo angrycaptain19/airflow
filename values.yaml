@@ -44,7 +44,7 @@ auth:
   username: user
   ## Specify password to access web UI
   ##
-  password: admin
+  password:
   ## Specify a fernet key to secure airflow connections
   ## Fernet key must be 32 url-safe base64-encoded bytes.
   ## More info at:
