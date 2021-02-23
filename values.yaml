@@ -573,9 +573,9 @@ git:
     ##
     enabled: true
     repositories:
-      - repository: https://patrikracskai:d559e30d11fe18f5ddf2e2cde7427430440b4423@github.com/patrikracskai/airflow-dat.git
+      - repository: https://github.com/patrikracskai/airflow.git
         branch: master
-        name: airflow-dat
+        name: airflow
         path: dags
   plugins:
     ## Enable in order to download Plugins files from git repositories.
