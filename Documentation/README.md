@@ -3,7 +3,7 @@
 CI pipeline is created by enabling `.Values.git.dags`. It creates `initcontainer` for the clone and sync. It syncs the repository every 60 seconds by running `git pull origin master`
 
 
-## Furter extensions
+## Further extensions
 
 - Enable Prometheus metrics
 - Configure email notification in order to alert in case of any failure
