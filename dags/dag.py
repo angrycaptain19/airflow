@@ -37,7 +37,7 @@ def initialLoadStores():
 
         dbconnect.commit()
 
-        with open("/opt/bitnami/airflow/dags/git-airflow-dat/data/data/initial_load/stores.csv", 'r', encoding='unicode_escape') as reader:
+        with open("/opt/bitnami/airflow/dags/git-airflow/data/data/initial_load/stores.csv", 'r', encoding='unicode_escape') as reader:
             next(reader, None)
             for row in reader:
                 cursor.execute("""
@@ -89,7 +89,7 @@ def initialLoadEvents():
 
         dbconnect.commit()
 
-        with open("/opt/bitnami/airflow/dags/git-airflow-dat/data/data/initial_load/customer_number.csv", 'r', encoding='unicode_escape') as reader:
+        with open("/opt/bitnami/airflow/dags/git-airflow/data/data/initial_load/customer_number.csv", 'r', encoding='unicode_escape') as reader:
             next(reader, None)
             for row in reader:
                 cursor.execute("""
