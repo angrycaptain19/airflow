@@ -44,7 +44,7 @@ auth:
   username: user
   ## Specify password to access web UI
   ##
-  password:
+  password: admin
   ## Specify a fernet key to secure airflow connections
   ## Fernet key must be 32 url-safe base64-encoded bytes.
   ## More info at:
@@ -121,6 +121,8 @@ web:
   ## Add extra environment variables
   ##
   extraEnvVars:
+    - name: AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION
+      value: "false"
   ## ConfigMap with extra environment variables
   ##
   extraEnvVarsCM:
